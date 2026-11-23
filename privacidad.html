@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Política de privacidad de NEXORA y uso verificado de datos de Google y YouTube.">
+  <title>Política de privacidad | NEXORA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="./">NEXORA</a>
+      <nav aria-label="Navegación principal">
+        <a href="./">Inicio</a>
+        <a href="privacidad.html" aria-current="page">Privacidad</a>
+        <a href="terminos.html">Condiciones</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container legal">
+    <p class="eyebrow">Documento en revisión</p>
+    <h1>Política de privacidad</h1>
+    <p class="meta">Última actualización del borrador: 22 de noviembre de 2026.</p>
+
+    <div class="notice">
+      <strong>Borrador informativo; aprobación pendiente</strong>
+      Este texto documenta hechos técnicos verificados, pero no se presenta como una política legalmente aprobada. Antes de su publicación final debe aprobarse la identidad legal del responsable y confirmarse los puntos señalados al final.
+    </div>
+
+    <h2>1. Alcance y uso de NEXORA</h2>
+    <p>NEXORA es la marca pública de una herramienta personal y exclusiva para administrar el canal de YouTube de su propietario. No se ofrece a terceros, no permite crear cuentas y no tiene usuarios externos.</p>
+    <p>El sitio informativo propuesto es estático: no incorpora formularios, analítica, cookies propias de seguimiento ni SDK de terceros.</p>
+
+    <h2>2. Responsable y contacto</h2>
+    <p>La identidad legal de la persona responsable está pendiente de aprobación. “NEXORA” identifica la marca pública y no sustituye automáticamente el nombre de una persona natural o jurídica.</p>
+    <p>El canal de contacto es <a href="mailto:nexora.studio.ec@gmail.com">nexora.studio.ec@gmail.com</a>. Ecuador es el país de referencia del proyecto; esta mención no confirma por sí sola domicilio, identidad legal ni jurisdicción aplicable.</p>
+
+    <h2>3. Permisos OAuth e información tratada</h2>
+    <p>NEXORA solicita únicamente estos permisos de Google:</p>
+    <ul>
+      <li><strong>youtube.upload:</strong> iniciar subidas reanudables de videos al canal propio y establecer sus miniaturas. Ya se realizaron subidas privadas.</li>
+      <li><strong>youtube.readonly:</strong> leer el identificador del canal autenticado, su lista de subidas y datos de videos como identificador, título, descripción y estado de privacidad. Se utiliza para verificar el canal y evitar subidas duplicadas.</li>
+      <li><strong>yt-analytics.readonly:</strong> consultar por video vistas, minutos vistos, duración media, porcentaje medio visto y suscriptores ganados. La función está implementada, pero no se ha confirmado su ejecución en producción.</li>
+    </ul>
+    <p>NEXORA no solicita permisos de perfil ni correo de Google, ni el permiso general de administración de YouTube.</p>
+
+    <h2>4. Finalidades</h2>
+    <p>La información se utiliza para autenticar al propietario, verificar el canal conectado, subir contenido privado, asignar miniaturas, detectar versiones ya subidas y, si el propietario ejecuta la función correspondiente, generar métricas y alertas editoriales locales.</p>
+
+    <h2>5. Autorización y revocación</h2>
+    <p>La autorización se concede mediante la pantalla de consentimiento de Google. El propietario puede revocar el acceso de NEXORA desde la configuración de seguridad de su cuenta de Google. La revocación impide nuevos accesos con esa autorización, pero no elimina automáticamente archivos locales, secretos de GitHub, informes ya generados ni videos ya subidos.</p>
+
+    <h2>6. Almacenamiento, conservación y eliminación</h2>
+    <ul>
+      <li>En el equipo del propietario puede existir un archivo OAuth local con el identificador y secreto del cliente, el token de actualización y la fecha de creación. Se crea con acceso restringido y está excluido del repositorio Git.</li>
+      <li>En GitHub Actions se utilizan secretos para el identificador del cliente, el secreto del cliente y el token de actualización. Los tokens de acceso se mantienen en memoria durante la ejecución y el código no los guarda en archivos.</li>
+      <li>Las consultas de métricas, cuando se ejecutan, se agregan a informes locales junto con alertas. No existe eliminación automática ni plazo de conservación definido para esos informes.</li>
+      <li>Los registros de Actions pueden contener identificadores y enlaces de videos privados. La política de retención de esos registros no está verificada.</li>
+      <li>Los artefactos de video, voz, renderizado y auditoría configurados en los workflows se conservan 1 día; los artefactos de miniaturas, 7 días.</li>
+      <li>Los tokens, secretos, informes locales y videos privados no tienen un plazo de eliminación definido. Los videos privados permanecen en YouTube hasta su eliminación manual.</li>
+    </ul>
+    <p>No existe actualmente un proceso automatizado para revocar o rotar credenciales, borrar informes locales, eliminar secretos de GitHub ni eliminar videos de YouTube. Las solicitudes pueden enviarse al correo de contacto, pero el procedimiento y el plazo de respuesta todavía deben definirse y aprobarse.</p>
+
+    <h2>7. Proveedores</h2>
+    <p>El funcionamiento conectado utiliza Google OAuth, YouTube Data API y YouTube Analytics API. También utiliza GitHub Actions, GitHub Secrets, runners alojados por GitHub, registros y almacenamiento temporal de artefactos. La auditoría no identificó una ruta que enviara tokens o respuestas de las API de Google a otros proveedores usados para producir recursos editoriales.</p>
+
+    <h2>8. Seguridad</h2>
+    <p>Entre las medidas verificadas se incluyen PKCE S256, estado aleatorio contra solicitudes falsificadas, retorno OAuth limitado al equipo local, archivos OAuth excluidos de Git, acceso restringido al archivo local, secretos enmascarados en los registros revisados, permisos de GitHub limitados, acciones fijadas a revisiones concretas y controles que mantienen deshabilitada la publicación pública salvo condiciones expresas. Estas medidas reducen riesgos, pero no garantizan seguridad absoluta.</p>
+
+    <h2>9. Datos de Google</h2>
+    <p>El uso de información recibida de las API de Google debe mantenerse coherente con la <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener noreferrer">Política de Datos de Usuario de los Servicios API de Google</a>, incluidos sus requisitos de uso limitado cuando sean aplicables.</p>
+
+    <h2>10. Cambios</h2>
+    <p>Los cambios materiales deberán reflejarse en esta página mediante una nueva fecha y una descripción actualizada de las prácticas reales. No se afirma todavía un mecanismo adicional de notificación.</p>
+
+    <h2>Confirmaciones pendientes antes de la versión final</h2>
+    <ul>
+      <li>Identidad legal de la persona responsable y, si corresponde, domicilio o datos adicionales exigibles.</li>
+      <li>Política y plazos para tokens, secretos, informes de métricas, logs y videos privados.</li>
+      <li>Procedimiento verificable para solicitudes de acceso, revocación o eliminación.</li>
+      <li>Si la función de métricas se ejecutará en producción.</li>
+      <li>Revisión legal y aprobación expresa del texto final.</li>
+    </ul>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 NEXORA</span>
+      <div class="footer-links">
+        <a href="./">Inicio</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="terminos.html">Condiciones</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
